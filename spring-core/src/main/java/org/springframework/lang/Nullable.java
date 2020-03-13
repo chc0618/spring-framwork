@@ -39,6 +39,12 @@ import javax.annotation.meta.When;
  * <p>Can be used in association with {@code @NonNullApi} or {@code @NonNullFields} to
  * override the default non-nullable semantic to nullable.
  *
+ * 一个通用的Spring注解，用于声明在某些情况下，被注释的元素可以是{@code null}。
+ * 利用JSR-305元注释来指示Java中支持JSR-305的通用工具的可空性，Kotlin使用它来推断Spring API的可空性。
+ *
+ * 应该在参数、返回值和字段级别使用。重写的方法应该重复父{@code @Nullable}注释，除非它们的行为不同。
+ * 可以与{@code @NonNullApi}或{@code @NonNullFields}联合使用，将默认的非空语义覆盖为空。
+ *
  * @author Sebastien Deleuze
  * @author Juergen Hoeller
  * @since 5.0
